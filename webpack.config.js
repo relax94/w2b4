@@ -61,7 +61,6 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
-                include: ['./src/styles']
             },
             { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
@@ -108,12 +107,6 @@ module.exports = {
             Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
             Util: "exports-loader?Util!bootstrap/js/dist/util"
         }),
-
-
-      new CopyWebpackPlugin([
-            { from: 'src/styles', to: 'styles' }
-        ]),
-
     ]
     // postcss: function () {
     //     return [

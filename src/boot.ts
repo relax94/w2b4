@@ -6,7 +6,6 @@ import { AppModule } from './app';
 
 import 'bootstrap-loader';
 import 'jquery';       
-        
 
 
 platformBrowserDynamic().bootstrapModule(AppModule)

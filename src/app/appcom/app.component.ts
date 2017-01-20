@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, ViewEncapsulation } from '@angular/core'
 
 
 @Component({
@@ -6,7 +6,8 @@ import { Component } from '@angular/core'
     styleUrls: [
         './app.component.css'
     ],
-    templateUrl: "./app.component.html"
+    templateUrl: "./app.component.html",
+    encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
 

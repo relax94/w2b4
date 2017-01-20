@@ -1,3 +1,21 @@
-<h1 class="colored">W loaded</h1>
-
-<button class="btn btn-primary">Button </button>
+<video id="bgvid" playsinline autoplay muted loop>
+    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+    <source [src]="fullBackVideo" type="video/mp4">
+</video>
+<div class="card w-25 text-center">
+    <div class="card-block">
+        <h3 class="card-title">Welcome</h3>
+        <p class="card-text">To continue please login.</p>
+        <form>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Enter email</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="john@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Enter password</label>
+                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="****">
+            </div>
+        </form>
+        <a href="#" class="btn btn-primary">Sign In</a>
+    </div>
+</div>
