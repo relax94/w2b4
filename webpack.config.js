@@ -42,22 +42,10 @@ module.exports = {
                 test: /\.json$/,
                 use: 'json-loader'
             },
-
-            /*
-             * to string and css loader support for *.css files (from Angular components)
-             * Returns file content as string
-             *
-             */
             {
                 test: /\.css$/,
                 use: ['to-string-loader', 'css-loader']
             },
-
-            /*
-             * to string and sass loader support for *.scss files (from Angular components)
-             * Returns compiled css content as string
-             *
-             */
             {
                 test: /\.scss$/,
                 loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
@@ -66,12 +54,6 @@ module.exports = {
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },
             // For bootstrap 4
             { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
-
-            /* Raw loader support for *.html
-             * Returns file content as string
-             *
-             * See: https://github.com/webpack/raw-loader
-             */
             {
                 test: /\.html$/,
                 use: 'raw-loader',

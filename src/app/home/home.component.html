@@ -1,21 +1,38 @@
-<video id="bgvid" playsinline autoplay muted loop>
-    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-    <source [src]="fullBackVideo" type="video/mp4">
-</video>
-<div class="card w-25 text-center">
-    <div class="card-block">
-        <h3 class="card-title">Welcome</h3>
-        <p class="card-text">To continue please login.</p>
-        <form>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Enter email</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="john@mail.com">
+<div class="home-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <img class="card-img-top img-centered" width="256" height="180" src="http://www.hollywoodreporter.com/sites/default/files/imagecache/landscape_928x523/2014/11/leonardo_dicaprio.jpg" alt="Card image cap">
+                    <div class="card-block">
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This
+                            content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Enter password</label>
-                <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="****">
+            <div class="col-md-8">
+                <div class="card w-100 text-center">
+                    <div class="card-block">
+                        <h3 class="card-title">Welcome</h3>
+                        <p class="card-text">To continue please login.</p>
+
+                        <a href="#" class="btn btn-primary">Sign In</a>
+                    </div>
+                </div>
             </div>
-        </form>
-        <a href="#" class="btn btn-primary">Sign In</a>
+            <div class="col-md-4">
+                <div class="card w-100 text-center">
+                    <div class="card-block">
+                        <h3 class="card-title">Welcome</h3>
+                        <p class="card-text">To continue please login.</p>
+
+                        <a href="#" class="btn btn-primary">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -14,12 +14,14 @@ import {auth} from './reducers/auth'
 import { ROUTES } from './app.routes';
 import { AppComponent } from './appcom'
 import { HomeComponent } from './home';
+import { AuthComponent } from './auth';
 
 
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
+        AuthComponent,
         HomeComponent,
     ],
     imports: [

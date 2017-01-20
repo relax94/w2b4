@@ -13,7 +13,4 @@ export class HomeComponent {
     constructor(private sanitizer: DomSanitizer) {
         this.fullBackVideo = sanitizer.bypassSecurityTrustUrl('http://thenewcode.com/assets/videos/polina.mp4');
     }
-
-
-
 }
