@@ -7,7 +7,9 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { auth } from './reducers/auth'
 import { ChartsModule } from 'ng2-charts';
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
+import {API_PROVIDERS} from './services/api';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -17,7 +19,8 @@ import { AppComponent } from './appcom'
 import { HomeComponent } from './home';
 import { AuthComponent } from './auth';
 import { NetworkMonitorComponent } from './charts'
-
+import { NetworkMapComponent } from './map'
+import {AuthService} from './model/auth.service'
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -25,7 +28,8 @@ import { NetworkMonitorComponent } from './charts'
         AppComponent,
         AuthComponent,
         HomeComponent,
-        NetworkMonitorComponent
+        NetworkMonitorComponent,
+        NetworkMapComponent
     ],
     imports: [
         BrowserModule,
@@ -33,9 +37,13 @@ import { NetworkMonitorComponent } from './charts'
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
         StoreModule.provideStore({ auth: auth }),
-        ChartsModule
+        ChartsModule, AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyCX0j5DYkIJKNQfI9zQJkNRYLA2d0y4hqY'
+        })
     ],
     providers: [
+        AuthService,
+        API_PROVIDERS
     ]
 })
 export class AppModule {

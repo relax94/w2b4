@@ -32,17 +32,25 @@
                         <small class="text-muted">Networks Common Information</small>
                     </div>
                     <div class="card-block">
-                        <ul class="list-group">
-                            <li class="list-group-item">Count Networks: 22</li>
-                            <li class="list-group-item">Active Networks: 12</li>
-                            <li class="list-group-item">Passive Networks: 4</li>
-                            <li class="list-group-item">Disabled Networks: 8</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                           
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Count Networks: 22</li>
+                                    <li class="list-group-item">Active Networks: 12</li>
+                                    <li class="list-group-item">Passive Networks: 4</li>
+                                    <li class="list-group-item">Disabled Networks: 8</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                        </div>
                     </div>
-                     <network-monitor-component></network-monitor-component>
+
                 </div>
+
+
             </div>
             <div class="col-md-4">
                 <div class="card w-100 text-center">
@@ -50,11 +58,19 @@
                         <small class="text-muted">Network Nodes Rank</small>
                     </div>
                     <div class="card-block">
-                        <h3 class="card-title">Welcome</h3>
-                        <p class="card-text">To continue please login.</p>
-
-                        <a href="#" class="btn btn-primary">Sign In</a>
+                        <h3 class="card-title">Network Realtime Stats</h3>
                     </div>
+                    <network-monitor-component></network-monitor-component>
+                </div>
+                <div class="card w-100 text-center">
+                    <div class="card-header">
+                        <small class="text-muted">Networks Location Information</small>
+                    </div>
+                    <div class="card-block">
+
+                        <network-map-component></network-map-component>
+                    </div>
+
                 </div>
             </div>
         </div>
