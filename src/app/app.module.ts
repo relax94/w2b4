@@ -5,7 +5,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { StoreModule } from '@ngrx/store';
-import {auth} from './reducers/auth'
+import { auth } from './reducers/auth'
+import { ChartsModule } from 'ng2-charts';
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -15,6 +16,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './appcom'
 import { HomeComponent } from './home';
 import { AuthComponent } from './auth';
+import { NetworkMonitorComponent } from './charts'
 
 
 @NgModule({
@@ -23,13 +25,15 @@ import { AuthComponent } from './auth';
         AppComponent,
         AuthComponent,
         HomeComponent,
+        NetworkMonitorComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-        StoreModule.provideStore({auth: auth})
+        StoreModule.provideStore({ auth: auth }),
+        ChartsModule
     ],
     providers: [
     ]
