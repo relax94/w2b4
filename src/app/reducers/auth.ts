@@ -25,7 +25,7 @@ var initialState: Auth = {
 export const auth = (state = initialState, action: Action = { type: INIT }) => {
     switch (action.type) {
         case USER_AUTHENTICATED:
-            return Object.assign({}, state, { token: action.payload.token, current: action.payload.user, error: null });
+            return Object.assign({}, state, {token: action.payload.token, current: action.payload.user, error: null });
 
         case LOGOUT_RECEIVED:
             return Object.assign({}, initialState);

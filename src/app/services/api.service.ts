@@ -37,7 +37,11 @@ export class ApiService {
         }
 
         return this.http.request(new Request(options))
-            .map((res: Response) => res.json());
+            .map((res: Response) => res.json())
+            .catch((err) => {
+                return Observable.of({ token: null, error: "Network error" });
+            });
+
     }
 
 }

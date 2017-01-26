@@ -49,21 +49,6 @@ export class AuthService {
         let loginFailure$ = logins.filter((payload: Auth) => payload.token === null)
             .map((payload) => ({ type: LOGIN_FAILURE, payload }));
 
-        // let signups = this.actions$
-        //     .filter(action => action.type === SIGNUP_USER)
-        //     .do(() => _store.dispatch({ type: SIGNUP_IN_PROGRESS }))
-        //     .mergeMap(action => api.signupUser(action.payload)).share();
-
-        // let signupSuccess$ = signups.filter((payload: Auth) => payload.token !== null)
-        //     .map((payload) => ({ type: USER_AUTHENTICATED, payload }));
-        // let signupFailure$ = signups.filter((payload: Auth) => payload.token === null)
-        //     .map((payload) => ({ type: SIGNUP_FAILURE, payload }));
-
-        // let logouts = this.actions$
-        //     .filter(action => action.type === LOGOUT_USER)
-        //     .do(() => _store.dispatch({ type: LOGOUT_IN_PROGRESS }))
-        //     .map(() => ({ type: LOGOUT_RECEIVED }));
-
         Observable
             .merge(loginSuccess$, loginFailure$)
             .subscribe((action: Action) => _store.dispatch(action));

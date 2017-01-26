@@ -68,6 +68,7 @@
   "dependencies": {
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
+    "@ngrx/store-devtools": "^3.2.3",
     "angular2-google-maps": "^0.17.0",
     "bootstrap": "^4.0.0-alpha.5",
     "bootstrap-loader": "2.0.0-beta.16",
