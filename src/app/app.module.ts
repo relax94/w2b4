@@ -8,6 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { StoreModule } from '@ngrx/store';
 import { auth } from './reducers/auth'
+import { networkReducer } from './reducers/network'
 import { ChartsModule } from 'ng2-charts';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
@@ -23,6 +24,7 @@ import { AuthComponent } from './auth';
 import { NetworkMonitorComponent } from './charts'
 import { NetworkMapComponent } from './map'
 import { AuthService } from './model/auth.service'
+import {NetworkActions} from './model/network.actions'
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -38,7 +40,7 @@ import { AuthService } from './model/auth.service'
         FormsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-        StoreModule.provideStore({ auth: auth }),
+        StoreModule.provideStore({ auth: auth, networkReducer }),
         ChartsModule, AgmCoreModule.forRoot({
             apiKey: 'AIzaSyCX0j5DYkIJKNQfI9zQJkNRYLA2d0y4hqY'
         }),
@@ -48,6 +50,7 @@ import { AuthService } from './model/auth.service'
     ],
     providers: [
         AuthService,
+        NetworkActions,
         API_PROVIDERS
     ]
 })

@@ -9,3 +9,10 @@ export interface Auth {
     error: string;
     current: User;
 }
+
+export interface Network{
+    id: string,
+    creatorId: number,
+    name: string,
+    description: string
+}
