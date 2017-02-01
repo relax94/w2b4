@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { AuthService } from '../model/auth.service'
 import { Subscription } from 'rxjs';
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
 
 @Component({
     selector: "auth",
@@ -40,9 +40,9 @@ export class AuthComponent {
     }
 
     handleCurrentSubscription(token: string): void {
-       if(token){
-           this.router.navigateByUrl('/home');
-       }
+        if (token) {
+            this.router.navigateByUrl('/home');
+        }
     }
 
     handleErrorSubscription(error: string): void {
