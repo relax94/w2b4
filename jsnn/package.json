@@ -1,0 +1,13 @@
+{
+  "name": "jsnn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/network.js",
+  "scripts": {
+  "start": "nodemon lib/network.js --exec babel-node",
+    "build": "babel ./lib -d ./dist",
+    "serve": "node dist/network.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
