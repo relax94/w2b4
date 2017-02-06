@@ -1,3 +1,5 @@
+import {appendFile, readFile} from 'fs'
+
 export const NeuronType = {
     NONE: "NONE",
     INPUT: "INPUT",
@@ -98,13 +100,17 @@ export class NN {
     }
 
     networkPreInit() {
+        this.initCore();
+        for (let layer of this.config.layers)
+            this.createLayer(layer);
+    }
+
+    initCore(){
         this.inputSize = this.config.layers.find(l => l.type === NeuronType.INPUT).size;
         this.hiddenSize = this.config.layers.find(l => l.type === NeuronType.HIDDEN).size;
         this.outputSize = this.config.layers.find(l => l.type === NeuronType.OUTPUT).size;
 
         this.network = [];
-        for (let layer of this.config.layers)
-            this.createLayer(layer);
     }
 
     createLayer(layer) {
@@ -128,7 +134,7 @@ export class NN {
     computeNeuronsValue(neuronType, linkType, fn, print) {
         return this.network.filter(h => h.type === neuronType).forEach((h) => {
             h.computeValue(this.references.filter(r => r.type === linkType && r.neuronToKey === h.key)
-                .reduce((prev, curr) => (prev + (curr.weight * fn(curr))), 0) + h.bias);
+                    .reduce((prev, curr) => (prev + (curr.weight * fn(curr))), 0) + h.bias);
 
             if (neuronType === NeuronType.OUTPUT)
                 if (print)
@@ -172,7 +178,7 @@ export class NN {
 
         this.learnCycles = 0;
 
-        while (this.learnCycles < 2000) {
+        while (this.learnCycles < 1000) {
 
             this.learnCycles++;
             for (let randomSet = 0; randomSet < trainInputs.length; randomSet++) {
@@ -184,23 +190,58 @@ export class NN {
                 this.adjustInputs((ref) => trainInputs[randomSet][ref.neuronFromKey]);
             }
 
-            if (this.learnCycles === 2000)
+            if (this.learnCycles === 1000)
                 return fn();
 
+            if (this.learnCycles % 100 === 0)
+                console.log('LEARN CYCLES ', this.learnCycles);
         }
 
     }
 
-    run(data) {
-
+    run(data, outputFn) {
+        let output = [];
         this.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, (ref) => data[ref.neuronFromKey]);
         this.computeNeuronsValue(NeuronType.OUTPUT, LinkType.HIDDEN_TO_OUTPUT, (curr) => this.network.find(n => n.type === NeuronType.HIDDEN && n.key === curr.neuronFromKey).value, (value) => {
 
-            console.log('OUT ', value);
+            output.push(value);
+            if (output.length === this.outputSize)
+                outputFn(output);
+            // console.log('OUT ', value);
         });
-
-
     }
 
+    networkStringConfiguration() {
+        const networkSaveConfig = {
+            configuration: this.config,
+            network: this.network,
+            references: this.references,
+            learnCycles: this.learnCycles
+        };
+
+        return JSON.stringify(networkSaveConfig);
+    }
+
+    serializeToFile() {
+        appendFile("d://network.txt", this.networkStringConfiguration(), (err) => {
+            console.log('append err ', err);
+        });
+    }
+
+    deserializeFromFile(path) {
+        readFile(path, "utf8", (err, content) => {
+            if (!err) {
+                this.deserializeObj = JSON.parse(content);
+                this.config = this.deserializeObj.configuration;
+                this.network = this.deserializeObj.network;
+                this.references = this.deserializeObj.references;
+                this.learnCycles = this.deserializeObj.learnCycles;
+
+                console.log('SUCCESS DESEREALIZING', this.learnCycles);
+            }
+            else
+                console.log('FAILED DESERIALIZE NETWORK FILE');
+        });
+    }
 }
 
