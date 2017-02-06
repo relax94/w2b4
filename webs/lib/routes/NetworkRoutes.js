@@ -16,6 +16,7 @@ import { NN, NeuronType } from './nn'
 
 
 const N = new NN({
+    cycles: 10000,
     layers: [{
         type: NeuronType.INPUT,
         size: 15
@@ -30,9 +31,9 @@ const N = new NN({
     }]
 });
 
-N.deserializeFromFile("d://network.txt");
+//N.deserializeFromFile("d://network.txt");
 
-/*N.trainNetwork([
+N.trainNetwork([
     [1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1],// 0
     [0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1], //1
     [1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1], //2
@@ -58,7 +59,7 @@ N.deserializeFromFile("d://network.txt");
         console.log('TRAIN SUCCESS');
         N.serializeToFile();
         // N.run([1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1]);
-    });*/
+    });
 
 
 

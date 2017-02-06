@@ -19,11 +19,15 @@ export function derivativeFn(x) {
 }
 
 export class Neuron {
-    constructor(type = NeuronType.NONE, key = -1, bias) {
+    constructor(type = NeuronType.NONE, key = -1, value = 0.0, bias) {
         this.type = type;
-        this.value = 0.0;
-        this.key = key;
-        this.bias = +(Math.random() * (0.9 - 0) + 0).toFixed(4);
+        this.value = value || 0.0;
+        this.key = key || 0;
+        this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
+    }
+
+    static fromConfig(config){
+        return new Neuron(config.type, config.value, config.key, config.bias);
     }
 
     fn(x) {
@@ -57,11 +61,15 @@ export class Neuron {
 }
 
 export class Link {
-    constructor(type = LinkType.NONE, neuronFromKey = -1, neuronToKey = -1, weight) {
+    constructor(type = LinkType.NONE, neuronFromKey = -1, neuronToKey = -1, weight = 0.0) {
         this.type = type;
         this.neuronFromKey = neuronFromKey;
         this.neuronToKey = neuronToKey;
-        this.generateWeight();
+        this.weight = weight || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
+    }
+
+    static fromConfig(config){
+        return new Link(config.type, config.neuronFromKey, config.neuronToKey, config.weight);
     }
 
     generateWeight() {
@@ -178,7 +186,7 @@ export class NN {
 
         this.learnCycles = 0;
 
-        while (this.learnCycles < 1000) {
+        while (this.learnCycles < this.config.cycles) {
 
             this.learnCycles++;
             for (let randomSet = 0; randomSet < trainInputs.length; randomSet++) {
@@ -190,10 +198,10 @@ export class NN {
                 this.adjustInputs((ref) => trainInputs[randomSet][ref.neuronFromKey]);
             }
 
-            if (this.learnCycles === 1000)
+            if (this.learnCycles === this.config.cycles)
                 return fn();
 
-            if (this.learnCycles % 100 === 0)
+            if (this.learnCycles % 1000 === 0)
                 console.log('LEARN CYCLES ', this.learnCycles);
         }
 
@@ -233,8 +241,8 @@ export class NN {
             if (!err) {
                 this.deserializeObj = JSON.parse(content);
                 this.config = this.deserializeObj.configuration;
-                this.network = this.deserializeObj.network;
-                this.references = this.deserializeObj.references;
+                this.network = this.deserializeObj.network.map((c) => Neuron.fromConfig(c));
+                this.references = this.deserializeObj.references.map((c) => Link.fromConfig(c));
                 this.learnCycles = this.deserializeObj.learnCycles;
 
                 console.log('SUCCESS DESEREALIZING', this.learnCycles);
