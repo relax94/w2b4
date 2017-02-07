@@ -32,37 +32,29 @@ export class Neuron {
         this.key = key;
         this.bias = Tools.randomGenerator();
     }
-
     fn(x) {
         return Tools.sigmoidaFn(x);
     }
-
     computeValue(inputValue) {
         this.value = this.fn(inputValue);
     }
-
     getValue() {
         return this.value;
     }
-
     setValue(value) {
         this.value = value;
     }
-
     setError(error) {
         this.error = error;
         this.setBias();
     }
-
     getError() {
         return this.error;
     }
-
     setBias() {
         this.bias += this.error;
     }
 }
-
 export class Link {
     constructor(type = LinkType.NONE, neuronFromKey = -1, neuronToKey = -1) {
         this.type = type;
@@ -141,7 +133,6 @@ export class NN {
         });
     }
 
-
     computeGlobalError(derivativeFunc) {
         this.network.filter(n => n.type === NeuronType.OUTPUT).forEach((o) => {
             this.error = Tools.derivativeFn(o.getValue()) * (derivativeFunc(o) - o.getValue());
@@ -169,11 +160,12 @@ export class NN {
         });
     }
 
+
     trainNetwork(trainInputs, trainAnswers, fn) {
         this.prevError = 2;
         this.error = 1;
         this.learnCycles = 0;
-        while (this.learnCycles < 20000) {
+        while (this.learnCycles < 100000) {
             this.learnCycles++;
             for (let randomSet = 0; randomSet < trainInputs.length; randomSet++) {
                 this.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, (curr) => trainInputs[randomSet][curr.neuronFromKey]);
@@ -182,7 +174,7 @@ export class NN {
                 this.computeGlobalError(o => trainAnswers[randomSet][o.key]);
                 this.adjustInputs((ref) => trainInputs[randomSet][ref.neuronFromKey]);
             }
-            if (this.learnCycles === 20000)
+            if (this.learnCycles === 100000)
                 return fn();
         }
     }
@@ -238,5 +230,5 @@ N.trainNetwork([
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
 ], () => {
     console.log('RESULTS : ');
-    N.run([0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]);
+    N.run([1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1]);
 });

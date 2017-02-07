@@ -35,3 +35,4 @@ server.register(_inert2.default, function (err) {
         console.log('Server running at:', server.info.uri);
     });
 });
+//# sourceMappingURL=index.js.map

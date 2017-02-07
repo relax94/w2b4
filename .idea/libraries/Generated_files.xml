@@ -1,0 +1,83 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/jsnn/dist/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/reducers/network.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/reducers/auth.js" />
+        <item url="file://$PROJECT_DIR$/dist/jsnn/lib/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/services/constants.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/services/api.service.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/services/api.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/charts/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/charts/network.monitor.component.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/app.module.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/appcom/app.component.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/app.routes.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/boot.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/lib/routes/nn.js" />
+        <item url="file://$PROJECT_DIR$/dist/jsnn/draw.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/lib/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/db/managers/Store.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/map/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/db/managers/NetworkManager.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/map/network.map.component.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/auth/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/routes/nn.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/auth/auth.component.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/routes/PlatformRoutes.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/home/home.component.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/db/models/Network.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/home/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/model/models.js" />
+        <item url="file://$PROJECT_DIR$/dist/webs/dist/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/model/auth.service.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/model/network.actions.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/appcom/index.js" />
+        <item url="file://$PROJECT_DIR$/dist/jsnn/dist/network.js" />
+        <item url="file://$PROJECT_DIR$/dist/dist/app/index.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/jsnn/dist/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/reducers/network.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/reducers/auth.js" />
+      <root url="file://$PROJECT_DIR$/dist/jsnn/lib/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/services/constants.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/services/api.service.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/services/api.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/charts/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/charts/network.monitor.component.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/app.module.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/appcom/app.component.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/app.routes.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/boot.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/lib/routes/nn.js" />
+      <root url="file://$PROJECT_DIR$/dist/jsnn/draw.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/lib/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/db/managers/Store.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/map/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/db/managers/NetworkManager.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/map/network.map.component.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/auth/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/routes/nn.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/auth/auth.component.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/routes/PlatformRoutes.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/home/home.component.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/db/models/Network.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/home/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/model/models.js" />
+      <root url="file://$PROJECT_DIR$/dist/webs/dist/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/model/auth.service.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/model/network.actions.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/appcom/index.js" />
+      <root url="file://$PROJECT_DIR$/dist/jsnn/dist/network.js" />
+      <root url="file://$PROJECT_DIR$/dist/dist/app/index.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

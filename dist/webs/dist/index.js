@@ -12,7 +12,9 @@ var _NetworkRoutes = require("./routes/NetworkRoutes");
 
 var _PlatformRoutes = require("./routes/PlatformRoutes");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : { default: obj };
+}
 
 var server = new _hapi2.default.Server();
 
@@ -35,3 +37,4 @@ server.register(_inert2.default, function (err) {
         console.log('Server running at:', server.info.uri);
     });
 });
+//# sourceMappingURL=index.js.map

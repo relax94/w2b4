@@ -3,10 +3,27 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.NN = exports.Link = exports.Neuron = exports.LinkType = exports.NeuronType = undefined;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () {
+    function defineProperties(target, props) {
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+        }
+    }return function (Constructor, protoProps, staticProps) {
+        if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+    };
+}();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+exports.derivativeFn = derivativeFn;
+
+var _fs = require("fs");
+
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+        throw new TypeError("Cannot call a class as a function");
+    }
+}
 
 var NeuronType = exports.NeuronType = {
     NONE: "NONE",
@@ -22,48 +39,29 @@ var LinkType = exports.LinkType = {
     HIDDEN_TO_OUTPUT: "HIDDEN_TO_OUTPUT"
 };
 
-var Tools = exports.Tools = function () {
-    function Tools() {
-        _classCallCheck(this, Tools);
-    }
-
-    _createClass(Tools, null, [{
-        key: "sigmoidaFn",
-        value: function sigmoidaFn(x) {
-            return 1.0 / (1.0 + Math.exp(-x));
-        }
-    }, {
-        key: "derivativeFn",
-        value: function derivativeFn(x) {
-            return x * (1 - x);
-        }
-    }, {
-        key: "randomGenerator",
-        value: function randomGenerator() {
-            return +(Math.random() * (0.9 - 0) + 0).toFixed(4);
-        }
-    }]);
-
-    return Tools;
-}();
+function derivativeFn(x) {
+    return x * (1 - x);
+}
 
 var Neuron = exports.Neuron = function () {
     function Neuron() {
         var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : NeuronType.NONE;
         var key = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
+        var value = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.0;
+        var bias = arguments[3];
 
         _classCallCheck(this, Neuron);
 
         this.type = type;
-        this.value = 0.0;
-        this.key = key;
-        this.bias = Tools.randomGenerator();
+        this.value = value || 0.0;
+        this.key = key || 0;
+        this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
 
     _createClass(Neuron, [{
         key: "fn",
         value: function fn(x) {
-            return Tools.sigmoidaFn(x);
+            return 1.0 / (1.0 + Math.exp(-x));
         }
     }, {
         key: "computeValue",
@@ -96,6 +94,11 @@ var Neuron = exports.Neuron = function () {
         value: function setBias() {
             this.bias += this.error;
         }
+    }], [{
+        key: "fromConfig",
+        value: function fromConfig(config) {
+            return new Neuron(config.type, config.value, config.key, config.bias);
+        }
     }]);
 
     return Neuron;
@@ -106,19 +109,20 @@ var Link = exports.Link = function () {
         var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : LinkType.NONE;
         var neuronFromKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : -1;
         var neuronToKey = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : -1;
+        var weight = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 0.0;
 
         _classCallCheck(this, Link);
 
         this.type = type;
         this.neuronFromKey = neuronFromKey;
         this.neuronToKey = neuronToKey;
-        this.generateWeight();
+        this.weight = weight || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
 
     _createClass(Link, [{
         key: "generateWeight",
         value: function generateWeight() {
-            this.weight = Tools.randomGenerator();
+            this.weight = +(Math.random() * (0.9 - 0) + 0).toFixed(4);
         }
     }, {
         key: "setDeltaWeight",
@@ -146,6 +150,11 @@ var Link = exports.Link = function () {
         value: function getWeight() {
             return this.weight;
         }
+    }], [{
+        key: "fromConfig",
+        value: function fromConfig(config) {
+            return new Link(config.type, config.neuronFromKey, config.neuronToKey, config.weight);
+        }
     }]);
 
     return Link;
@@ -164,17 +173,7 @@ var NN = exports.NN = function () {
     _createClass(NN, [{
         key: "networkPreInit",
         value: function networkPreInit() {
-            this.inputSize = this.config.layers.find(function (l) {
-                return l.type === NeuronType.INPUT;
-            }).size;
-            this.hiddenSize = this.config.layers.find(function (l) {
-                return l.type === NeuronType.HIDDEN;
-            }).size;
-            this.outputSize = this.config.layers.find(function (l) {
-                return l.type === NeuronType.OUTPUT;
-            }).size;
-
-            this.network = [];
+            this.initCore();
             var _iteratorNormalCompletion = true;
             var _didIteratorError = false;
             var _iteratorError = undefined;
@@ -201,6 +200,21 @@ var NN = exports.NN = function () {
             }
         }
     }, {
+        key: "initCore",
+        value: function initCore() {
+            this.inputSize = this.config.layers.find(function (l) {
+                return l.type === NeuronType.INPUT;
+            }).size;
+            this.hiddenSize = this.config.layers.find(function (l) {
+                return l.type === NeuronType.HIDDEN;
+            }).size;
+            this.outputSize = this.config.layers.find(function (l) {
+                return l.type === NeuronType.OUTPUT;
+            }).size;
+
+            this.network = [];
+        }
+    }, {
         key: "createLayer",
         value: function createLayer(layer) {
             for (var i = 0; i < layer.size; i++) {
@@ -211,7 +225,9 @@ var NN = exports.NN = function () {
         key: "createReferences",
         value: function createReferences() {
             this.references = [];
+
             for (var h = 0; h < this.hiddenSize; h++) {
+
                 for (var i = 0; i < this.inputSize; i++) {
                     this.references.push(new Link(LinkType.INPUT_TO_HIDDEN, i, h));
                 }for (var o = 0; o < this.outputSize; o++) {
@@ -232,7 +248,9 @@ var NN = exports.NN = function () {
                 }).reduce(function (prev, curr) {
                     return prev + curr.weight * fn(curr);
                 }, 0) + h.bias);
+
                 if (neuronType === NeuronType.OUTPUT) if (print) print(h.getValue());
+                //this.outputValue = h.getValue();
             });
         }
     }, {
@@ -243,7 +261,7 @@ var NN = exports.NN = function () {
             this.network.filter(function (n) {
                 return n.type === NeuronType.OUTPUT;
             }).forEach(function (o) {
-                _this2.error = Tools.derivativeFn(o.getValue()) * (derivativeFunc(o) - o.getValue());
+                _this2.error = derivativeFn(o.getValue()) * (derivativeFunc(o) - o.getValue());
                 o.setError(_this2.error);
                 _this2.computeHiddenErrors(o);
             });
@@ -261,7 +279,7 @@ var NN = exports.NN = function () {
                 });
                 var newWeight = ref.getWeight() + o.error * hiddenNeuron.value;
                 ref.setWeight(newWeight);
-                hiddenNeuron.setError(Tools.derivativeFn(hiddenNeuron.getValue()) * o.error * newWeight);
+                hiddenNeuron.setError(derivativeFn(hiddenNeuron.getValue()) * o.error * newWeight);
             });
         }
     }, {
@@ -288,11 +306,15 @@ var NN = exports.NN = function () {
 
             this.prevError = 2;
             this.error = 1;
+
             this.learnCycles = 0;
-            while (this.learnCycles < 20000) {
+
+            while (this.learnCycles < this.config.cycles) {
+
                 this.learnCycles++;
 
                 var _loop = function _loop(randomSet) {
+
                     _this5.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, function (curr) {
                         return trainInputs[randomSet][curr.neuronFromKey];
                     });
@@ -313,14 +335,18 @@ var NN = exports.NN = function () {
                 for (var randomSet = 0; randomSet < trainInputs.length; randomSet++) {
                     _loop(randomSet);
                 }
-                if (this.learnCycles === 20000) return fn();
+
+                if (this.learnCycles === this.config.cycles) return fn();
+
+                if (this.learnCycles % 1000 === 0) console.log('LEARN CYCLES ', this.learnCycles);
             }
         }
     }, {
         key: "run",
-        value: function run(data) {
+        value: function run(data, outputFn) {
             var _this6 = this;
 
+            var output = [];
             this.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, function (ref) {
                 return data[ref.neuronFromKey];
             });
@@ -329,38 +355,54 @@ var NN = exports.NN = function () {
                     return n.type === NeuronType.HIDDEN && n.key === curr.neuronFromKey;
                 }).value;
             }, function (value) {
-                console.log('OUT ', value);
+
+                output.push(value);
+                if (output.length === _this6.outputSize) outputFn(output);
+                // console.log('OUT ', value);
+            });
+        }
+    }, {
+        key: "networkStringConfiguration",
+        value: function networkStringConfiguration() {
+            var networkSaveConfig = {
+                configuration: this.config,
+                network: this.network,
+                references: this.references,
+                learnCycles: this.learnCycles
+            };
+
+            return JSON.stringify(networkSaveConfig);
+        }
+    }, {
+        key: "serializeToFile",
+        value: function serializeToFile() {
+            (0, _fs.appendFile)("d://network.txt", this.networkStringConfiguration(), function (err) {
+                console.log('append err ', err);
+            });
+        }
+    }, {
+        key: "deserializeFromFile",
+        value: function deserializeFromFile(path) {
+            var _this7 = this;
+
+            (0, _fs.readFile)(path, "utf8", function (err, content) {
+                if (!err) {
+                    _this7.deserializeObj = JSON.parse(content);
+                    _this7.config = _this7.deserializeObj.configuration;
+                    _this7.network = _this7.deserializeObj.network.map(function (c) {
+                        return Neuron.fromConfig(c);
+                    });
+                    _this7.references = _this7.deserializeObj.references.map(function (c) {
+                        return Link.fromConfig(c);
+                    });
+                    _this7.learnCycles = _this7.deserializeObj.learnCycles;
+
+                    console.log('SUCCESS DESEREALIZING', _this7.learnCycles);
+                } else console.log('FAILED DESERIALIZE NETWORK FILE');
             });
         }
     }]);
 
     return NN;
 }();
-
-var N = new NN({
-    layers: [{
-        type: NeuronType.INPUT,
-        size: 15
-    }, {
-        type: NeuronType.HIDDEN,
-        size: 15
-    }, {
-        type: NeuronType.OUTPUT,
-        size: 10
-    }]
-});
-
-N.trainNetwork([[0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1], //1
-[1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1], //2
-[1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1], //3
-[1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1], // 4
-[1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1], // 5
-[1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1], //6
-[1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0], // 7
-[1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1], // 8
-[1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1], // 9
-[1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1]], [[1, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], function () {
-    console.log('RESULTS : ');
-    N.run([0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]);
-});
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=nn.js.map
