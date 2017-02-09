@@ -1,6 +1,6 @@
 import Hapi from "hapi"
 import inert from "inert"
-import {PostImageData } from './routes/NetworkRoutes'
+import {PostImageData, TrainNetwork } from './routes/NetworkRoutes'
 import { StatusRoute } from './routes/PlatformRoutes'
 
 const server = new Hapi.Server();
@@ -15,6 +15,7 @@ server.register(inert, err => {
 
     server.route(StatusRoute);
     server.route(PostImageData);
+    server.route(TrainNetwork);
 
     // Start the server
     server.start(err => {

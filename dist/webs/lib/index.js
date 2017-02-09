@@ -25,6 +25,7 @@ server.register(_inert2.default, function (err) {
 
     server.route(_PlatformRoutes.StatusRoute);
     server.route(_NetworkRoutes.PostImageData);
+    server.route(_NetworkRoutes.TrainNetwork);
 
     // Start the server
     server.start(function (err) {

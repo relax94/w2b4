@@ -114,4 +114,119 @@ document.getElementById('recognize').addEventListener('click', function () {
         dataType: 'json'
     });
 });
+
+var mousePressed = false;
+var lastX, lastY;
+var ctx;
+
+function InitThis() {
+    ctx = document.getElementById('myCanvas').getContext("2d");
+
+    $('#myCanvas').mousedown(function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+    });
+
+    $('#myCanvas').mousemove(function (e) {
+        if (mousePressed) {
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+        }
+    });
+
+    $('#myCanvas').mouseup(function (e) {
+        mousePressed = false;
+    });
+    $('#myCanvas').mouseleave(function (e) {
+        mousePressed = false;
+    });
+}
+
+function Draw(x, y, isDown) {
+    if (isDown) {
+        ctx.beginPath();
+        ctx.strokeStyle = $('#selColor').val();
+        ctx.lineWidth = $('#selWidth').val();
+        ctx.lineJoin = "round";
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    lastX = x;lastY = y;
+}
+
+var trainSingleEpochExample = [];
+document.getElementById('addExample').addEventListener('click', function () {
+    var answer = document.getElementById('answer').value;
+
+    var pixelsArr = [];
+
+    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
+    imageData.reduce(function (prev, next, i) {
+        prev += next;
+        if ((i + 1) % 4 === 0) {
+            pixelsArr.push(prev);
+            prev = 0;
+        }
+        return prev;
+    }, 0);
+
+    //trainSingleEpochExample[answer] = pixelsArr;
+    trainSingleEpochExample.push(pixelsArr);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    console.log(trainSingleEpochExample);
+});
+
+document.getElementById('recognizeHandwrite').addEventListener('click', function () {
+    var pixelsArr = [];
+
+    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
+    imageData.reduce(function (prev, next, i) {
+        prev += next;
+        if ((i + 1) % 4 === 0) {
+            pixelsArr.push(prev);
+            prev = 0;
+        }
+        return prev;
+    }, 0);
+
+    console.log('hnd rec ', pixelsArr);
+    //trainSingleEpochExample[answer] = pixelsArr;
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost:4343/network/games/image',
+        data: { data: pixelsArr },
+        success: function success(_success2) {
+            var max = Math.max.apply(Math, _toConsumableArray(_success2));
+            for (var i in _success2) {
+                var el = document.createElement('div');
+                el.innerText = i + "  ---- >  " + _success2[i];
+
+                if (_success2[i] == max) el.style.backgroundColor = "green";
+                document.getElementById('output-results').append(el);
+            }
+        },
+        dataType: 'json'
+    });
+});
+
+document.getElementById('trainNetwork').addEventListener('click', function () {
+
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost:4343/network/games/train',
+        data: { set: JSON.stringify(trainSingleEpochExample) },
+        success: function success(_success3) {},
+        dataType: 'json'
+    });
+});
+
+function clearArea() {
+    // Use the identity matrix while clearing the canvas
+
+
+}
 //# sourceMappingURL=draw.js.map

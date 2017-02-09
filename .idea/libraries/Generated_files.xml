@@ -2,6 +2,7 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/dist/src/app/games/nlp.js" />
         <item url="file://$PROJECT_DIR$/dist/jsnn/dist/index.js" />
         <item url="file://$PROJECT_DIR$/dist/dist/app/reducers/network.js" />
         <item url="file://$PROJECT_DIR$/dist/dist/app/reducers/auth.js" />
@@ -41,6 +42,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/dist/src/app/games/nlp.js" />
       <root url="file://$PROJECT_DIR$/dist/jsnn/dist/index.js" />
       <root url="file://$PROJECT_DIR$/dist/dist/app/reducers/network.js" />
       <root url="file://$PROJECT_DIR$/dist/dist/app/reducers/auth.js" />

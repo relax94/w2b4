@@ -180,7 +180,7 @@ export class NN {
     }
 
     trainNetwork(trainInputs, trainAnswers, fn) {
-
+        console.log('TRAIN START');
         this.prevError = 2;
         this.error = 1;
 

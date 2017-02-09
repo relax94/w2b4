@@ -304,6 +304,7 @@ var NN = exports.NN = function () {
         value: function trainNetwork(trainInputs, trainAnswers, fn) {
             var _this5 = this;
 
+            console.log('TRAIN START');
             this.prevError = 2;
             this.error = 1;
 
