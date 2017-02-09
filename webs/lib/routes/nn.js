@@ -21,7 +21,7 @@ export function derivativeFn(x) {
 export class Neuron {
     constructor(type = NeuronType.NONE, key = -1, value = 0.0, bias) {
         this.type = type;
-        this.value = value || 0.0;
+        this.value = value / 255 || 0;
         this.key = key || 0;
         this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
@@ -201,7 +201,7 @@ export class NN {
             if (this.learnCycles === this.config.cycles)
                 return fn();
 
-            if (this.learnCycles % 1000 === 0)
+           // if (this.learnCycles % 1000 === 0)
                 console.log('LEARN CYCLES ', this.learnCycles);
         }
 

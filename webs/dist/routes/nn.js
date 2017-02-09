@@ -41,7 +41,7 @@ var Neuron = exports.Neuron = function () {
         _classCallCheck(this, Neuron);
 
         this.type = type;
-        this.value = value || 0.0;
+        this.value = value / 255 || 0;
         this.key = key || 0;
         this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
@@ -327,7 +327,8 @@ var NN = exports.NN = function () {
 
                 if (this.learnCycles === this.config.cycles) return fn();
 
-                if (this.learnCycles % 1000 === 0) console.log('LEARN CYCLES ', this.learnCycles);
+                // if (this.learnCycles % 1000 === 0)
+                console.log('LEARN CYCLES ', this.learnCycles);
             }
         }
     }, {

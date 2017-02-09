@@ -173,7 +173,7 @@ document.getElementById('addExample').addEventListener('click', function () {
 
     var pixelsArr = [];
 
-    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    var imageData = ctx.getImageData(0, 0, 25, 25).data;
     //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
     imageData.reduce((prev, next, i) => {
         prev += next;
@@ -195,7 +195,7 @@ document.getElementById('addExample').addEventListener('click', function () {
 document.getElementById('recognizeHandwrite').addEventListener('click', function () {
     var pixelsArr = [];
 
-    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    var imageData = ctx.getImageData(0, 0, 25, 25).data;
     //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
     imageData.reduce((prev, next, i) => {
         prev += next;
