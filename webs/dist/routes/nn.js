@@ -41,7 +41,7 @@ var Neuron = exports.Neuron = function () {
         _classCallCheck(this, Neuron);
 
         this.type = type;
-        this.value = value / 255 || 0;
+        this.value = value;
         this.key = key || 0;
         this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
@@ -307,6 +307,7 @@ var NN = exports.NN = function () {
                     _this5.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, function (curr) {
                         return trainInputs[randomSet][curr.neuronFromKey];
                     });
+
                     _this5.computeNeuronsValue(NeuronType.OUTPUT, LinkType.HIDDEN_TO_OUTPUT, function (curr) {
                         return _this5.network.find(function (n) {
                             return n.type === NeuronType.HIDDEN && n.key === curr.neuronFromKey;

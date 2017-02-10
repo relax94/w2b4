@@ -21,7 +21,7 @@ export function derivativeFn(x) {
 export class Neuron {
     constructor(type = NeuronType.NONE, key = -1, value = 0.0, bias) {
         this.type = type;
-        this.value = value / 255 || 0;
+        this.value = value;
         this.key = key || 0;
         this.bias = bias || +(Math.random() * (0.9 - 0) + 0).toFixed(4);
     }
@@ -192,6 +192,8 @@ export class NN {
             for (let randomSet = 0; randomSet < trainInputs.length; randomSet++) {
 
                 this.computeNeuronsValue(NeuronType.HIDDEN, LinkType.INPUT_TO_HIDDEN, (curr) => trainInputs[randomSet][curr.neuronFromKey]);
+
+
                 this.computeNeuronsValue(NeuronType.OUTPUT, LinkType.HIDDEN_TO_OUTPUT, (curr) => this.network.find(n => n.type === NeuronType.HIDDEN && n.key === curr.neuronFromKey).value);
 
                 this.computeGlobalError(o => trainAnswers[randomSet][o.key]);

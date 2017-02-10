@@ -1,6 +1,7 @@
 // import { NetworkManager } from '../db/managers/NetworkManager'
 import {NN, NeuronType} from './nn'
-
+import * as fs from 'fs'
+import * as jsonfile from 'jsonfile'
 // const NM = new NetworkManager();
 
 // export let CreateNetworkRoute = {
@@ -15,37 +16,109 @@ import {NN, NeuronType} from './nn'
 // };
 
 
+
+Object.values = function (obj) {
+    var vals = [];
+    for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            vals.push(+obj[key] > 100 ? 1 : 0);
+        }
+    }
+    return vals;
+}
+
+var numConverter = [
+    [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+];
+
+var trainQ = []; // import { NetworkManager } from '../db/managers/NetworkManager'
+
+var trainA = [];
+
+var trainDictionary = {
+    0 : [],
+    1 : [],
+    2 : [],
+    3 : [],
+    4 : [],
+    5 : [],
+    6 : [],
+    7 : [],
+    8 : [],
+    9 : []
+};
+
+var obj;
+fs.readFile('../converted.json', 'utf8', function (err, data) {
+    if (err) throw err;
+    obj = JSON.parse(data);
+
+    for(var item of obj){
+/*        trainA.push(numConverter[+item['label']]);*/
+        var label = +item['label'];
+        delete item['label'];
+        trainDictionary[label].push(Object.values(item));
+/*        }
+        delete item['label'];
+        trainQ.push(Object.values(item));*/
+    }
+
+    for(var trainItemKey in Object.keys(trainDictionary)){
+        trainQ.push(trainDictionary[trainItemKey][0]);
+        trainA.push(numConverter[trainItemKey]);
+    }
+
+    N.trainNetwork(trainQ, trainA, () => {
+        console.log('TRAIN SUCCESS');
+        //  N.serializeToFile();
+        N.run(trainQ[0], function (output) {
+            console.log('OOOO ', output);
+        });
+        console.log();
+        N.run(trainQ[1], function (output) {
+            console.log('OOOO ', output);
+        });
+        console.log();
+        N.run(trainQ[2], function (output) {
+            console.log('OOOO ', output);
+        });
+        console.log();
+        N.run(trainQ[3], function (output) {
+            console.log('OOOO ', output);
+        });
+    });
+
+});
+
+
 const N = new NN({
-    cycles: 50000,
+    cycles: 1,
     layers: [{
         type: NeuronType.INPUT,
-        size: 625
+        size: 784
     },
         {
             type: NeuronType.HIDDEN,
-            size: 2
+            size: 20
         },
         {
             type: NeuronType.OUTPUT,
-            size: 5
+            size: 10
         }]
 });
 
 //N.deserializeFromFile("d://network.txt");
 
 
-var numConverter = [
-   /* [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],*/
-    [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
-    /*[0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]*/];
-   /* [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]]*/;
-   ];
 
 /*
 N.trainNetwork([
