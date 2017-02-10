@@ -5,33 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfd9b865-10a6-48b6-9c00-9783529e5af7" name="Default" comment="add small trainings">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/games/nlp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/jsnn/draw.js" afterPath="$PROJECT_DIR$/dist/jsnn/draw.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/jsnn/draw.js.map" afterPath="$PROJECT_DIR$/dist/jsnn/draw.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/index.js" afterPath="$PROJECT_DIR$/dist/webs/dist/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/index.js.map" afterPath="$PROJECT_DIR$/dist/webs/dist/index.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js" afterPath="$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js.map" afterPath="$PROJECT_DIR$/dist/webs/dist/routes/NetworkRoutes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/routes/nn.js" afterPath="$PROJECT_DIR$/dist/webs/dist/routes/nn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/dist/routes/nn.js.map" afterPath="$PROJECT_DIR$/dist/webs/dist/routes/nn.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/index.js" afterPath="$PROJECT_DIR$/dist/webs/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/index.js.map" afterPath="$PROJECT_DIR$/dist/webs/lib/index.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js" afterPath="$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js.map" afterPath="$PROJECT_DIR$/dist/webs/lib/routes/NetworkRoutes.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/routes/nn.js" afterPath="$PROJECT_DIR$/dist/webs/lib/routes/nn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/webs/lib/routes/nn.js.map" afterPath="$PROJECT_DIR$/dist/webs/lib/routes/nn.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsnn/draw.js" afterPath="$PROJECT_DIR$/jsnn/draw.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jsnn/index.html" afterPath="$PROJECT_DIR$/jsnn/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/dist/index.js" afterPath="$PROJECT_DIR$/webs/dist/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js" afterPath="$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/dist/routes/nn.js" afterPath="$PROJECT_DIR$/webs/dist/routes/nn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/lib/index.js" afterPath="$PROJECT_DIR$/webs/lib/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/lib/routes/NetworkRoutes.js" afterPath="$PROJECT_DIR$/webs/lib/routes/NetworkRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/lib/routes/nn.js" afterPath="$PROJECT_DIR$/webs/lib/routes/nn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webs/package.json" afterPath="$PROJECT_DIR$/webs/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,9 +34,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webs/lib/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webs/dist/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
+            <state relative-caret-position="261">
               <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
@@ -62,8 +56,8 @@
       <file leaf-file-name="draw.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsnn/draw.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-559">
-              <caret line="208" column="39" lean-forward="false" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
+            <state relative-caret-position="7163">
+              <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,8 +66,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsnn/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+            <state relative-caret-position="377">
+              <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -82,8 +76,8 @@
       <file leaf-file-name="NetworkRoutes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webs/lib/routes/NetworkRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            <state relative-caret-position="29">
+              <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -102,7 +96,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsnn/dist/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
+            <state relative-caret-position="10382">
               <caret line="358" column="34" lean-forward="false" selection-start-line="358" selection-start-column="34" selection-end-line="358" selection-end-column="34" />
               <folding />
             </state>
@@ -112,9 +106,11 @@
       <file leaf-file-name="NetworkRoutes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="1479">
+              <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
+              <folding>
+                <marker date="1486659928996" expanded="true" signature="879:946" ph="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,7 +118,7 @@
       <file leaf-file-name="nn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webs/lib/routes/nn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2461">
+            <state relative-caret-position="5249">
               <caret line="181" column="42" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="42" />
               <folding />
             </state>
@@ -132,8 +128,8 @@
       <file leaf-file-name="nn.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webs/dist/routes/nn.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="348" column="57" lean-forward="false" selection-start-line="348" selection-start-column="57" selection-end-line="348" selection-end-column="57" />
+            <state relative-caret-position="6989">
+              <caret line="241" column="2" lean-forward="false" selection-start-line="241" selection-start-column="2" selection-end-line="241" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -154,9 +150,9 @@
         <option value="$PROJECT_DIR$/src/app/games/nlp.js" />
         <option value="$PROJECT_DIR$/webs/lib/index.js" />
         <option value="$PROJECT_DIR$/webs/lib/routes/nn.js" />
-        <option value="$PROJECT_DIR$/jsnn/index.html" />
         <option value="$PROJECT_DIR$/webs/dist/routes/nn.js" />
         <option value="$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js" />
+        <option value="$PROJECT_DIR$/jsnn/index.html" />
         <option value="$PROJECT_DIR$/jsnn/draw.js" />
         <option value="$PROJECT_DIR$/webs/lib/routes/NetworkRoutes.js" />
       </list>
@@ -196,7 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -367,7 +363,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,7 +487,8 @@
       <workItem from="1486368348487" duration="19740000" />
       <workItem from="1486453067823" duration="1340000" />
       <workItem from="1486553286770" duration="2487000" />
-      <workItem from="1486631652474" duration="15349000" />
+      <workItem from="1486631652474" duration="22403000" />
+      <workItem from="1486712783626" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="add small trainings">
       <created>1486039060327</created>
@@ -518,7 +515,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47169000" />
+    <option name="totallyTimeSpent" value="54585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="2418" height="1318" extended-state="6" />
@@ -530,18 +527,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.50147617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24968368" sideWeight="0.50303555" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.49852383" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32437122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32784042" sideWeight="0.49852383" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42921856" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32437122" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,19 +567,27 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/webs/lib/routes/nn.js</url>
-          <line>183</line>
-          <properties />
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/webs/dist/routes/nn.js</url>
+          <line>335</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/webs/dist/routes/nn.js</url>
-          <line>335</line>
-          <properties />
-          <option name="timeStamp" value="19" />
+          <line>341</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/webs/dist/routes/nn.js</url>
+          <line>348</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/webs/dist/routes/nn.js</url>
+          <line>233</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="21" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -591,9 +596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#canvas#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -609,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -633,9 +634,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
           <caret line="26" column="3" lean-forward="false" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,9 +649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#canvas#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -685,9 +680,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="754">
           <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -703,7 +696,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,7 +859,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -876,7 +866,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1044">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,7 +873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -892,48 +880,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webs/lib/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="377">
+          <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="51" column="30" lean-forward="false" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
           <folding>
-            <element signature="e#0#23#0" expanded="false" />
+            <marker date="1486659928996" expanded="true" signature="879:946" ph="[...]" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/dist/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jsnn/draw.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="208" column="39" lean-forward="false" selection-start-line="208" selection-start-column="39" selection-end-line="208" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webs/dist/routes/nn.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="348" column="57" lean-forward="false" selection-start-line="348" selection-start-column="57" selection-end-line="348" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsnn/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+        <state relative-caret-position="377">
+          <caret line="13" column="51" lean-forward="false" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/lib/routes/nn.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5249">
+          <caret line="181" column="42" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webs/dist/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -948,32 +935,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jsnn/dist/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
+        <state relative-caret-position="10382">
           <caret line="358" column="34" lean-forward="false" selection-start-line="358" selection-start-column="34" selection-end-line="358" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/dist/routes/NetworkRoutes.js">
+    <entry file="file://$PROJECT_DIR$/webs/dist/routes/nn.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="53" column="42" lean-forward="false" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+        <state relative-caret-position="6989">
+          <caret line="241" column="2" lean-forward="false" selection-start-line="241" selection-start-column="2" selection-end-line="241" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webs/lib/routes/nn.js">
+    <entry file="file://$PROJECT_DIR$/jsnn/draw.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2461">
-          <caret line="181" column="42" lean-forward="false" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="42" />
+        <state relative-caret-position="7163">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webs/lib/routes/NetworkRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="29">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
           <folding />
         </state>
       </provider>

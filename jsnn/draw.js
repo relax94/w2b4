@@ -173,7 +173,7 @@ document.getElementById('addExample').addEventListener('click', function () {
 
     var pixelsArr = [];
 
-    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    var imageData = ctx.getImageData(0, 0, 25, 25).data;
     //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
     imageData.reduce((prev, next, i) => {
         prev += next;
@@ -184,18 +184,28 @@ document.getElementById('addExample').addEventListener('click', function () {
         return prev;
     },0);
 
+/*for(var i = 0; i < imageData.length; i+=4) {
+    var r = imageData[i];
+    var g = imageData[i + 1];
+    var b = imageData[i + 2];
+
+    var rgb = r + g + b;
+    pixelsArr.push(rgb);
+}*/
+
     //trainSingleEpochExample[answer] = pixelsArr;
     trainSingleEpochExample.push(pixelsArr);
+    console.log(trainSingleEpochExample);
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    console.log(trainSingleEpochExample);
+
 });
 
 
 document.getElementById('recognizeHandwrite').addEventListener('click', function () {
     var pixelsArr = [];
 
-    var imageData = ctx.getImageData(0, 0, 28, 28).data;
+    var imageData = ctx.getImageData(0, 0, 25, 25).data;
     //var imageData = [1,2,2,1,2,3,4,1,1,3,4,1,2,3,4,5];
     imageData.reduce((prev, next, i) => {
         prev += next;
